@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Don't rewrite if the file exists
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Everything else to the main endpoint.
+RewriteRule ^(.*)$ index.php/$0 [PT,L]
