@@ -84,16 +84,11 @@ class View {
 						"javaScript"=> $javaScript,
 						"css"		=> $css);
 		if (is_array($data)) {
-			foreach ($data as $key => $val) {
+			foreach ($data as $key => $val) 
 				$inData[$key] = $val;
-			}
 		}
 		$view->setData($inData);
-		if ($toScreen)
-			$view->render($toScreen, $compress);
-		else
-			return $view->render(false, $compress);
-
+		$view->render($toScreen, $compress);
 	}
 
 	private static function compress(&$html) {
@@ -104,5 +99,3 @@ class View {
 	}
 
 }
-
-?>
