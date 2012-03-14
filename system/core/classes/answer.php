@@ -8,7 +8,9 @@ defined("SYSTEM") or die("Can't execute directly");
 class Answer {
 
 	public static function request() {
-		$pathInfo = isset($_SERVER['PATH_INFO']) ? trim ($_SERVER['PATH_INFO'], "/") : DEFAULT_CONTROLLER;
+		if (isset($_SERVER['PATH_INFO']))
+			$_SERVER['ORIG_PATH_INFO'] = $_SERVER['PATH_INFO'];
+		$pathInfo = isset($_SERVER['ORIG_PATH_INFO']) ? trim ($_SERVER['ORIG_PATH_INFO'], "/") : DEFAULT_CONTROLLER;
 		$pathParts = explode("/", $pathInfo);
 		count($pathParts) > 0 or die("Invalid URL.");
 		
