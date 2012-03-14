@@ -22,5 +22,5 @@ To put it working:
 TO-DOS:
 
 - Improve FW documentation.
-- Fix an answer bug regarding the names for the $_SERVER["PATH_INFO"] variable being different in the various httpd implementations.
+- [DONE] Fix an answer bug regarding the names for the $_SERVER["PATH_INFO"] variable being different in the various httpd implementations.
 - I use a great framework for Mailing (Swift) but we have to externalize it in opposition to adding it to our system core.
